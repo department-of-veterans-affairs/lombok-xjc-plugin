@@ -4,7 +4,7 @@
   <parent>
     <groupId>gov.va.api.health</groupId>
     <artifactId>health-apis-parent</artifactId>
-    <version>2.0.3</version>
+    <version>2.0.4</version>
     <relativePath/>
   </parent>
   <groupId>gov.va.xjc</groupId>
