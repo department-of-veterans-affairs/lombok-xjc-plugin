@@ -18,7 +18,10 @@ public final class LombokXjcPlugin extends Plugin {
   private static void annotateClass(final ClassOutline classOutline) {
     final JDefinedClass clazz = classOutline.implClass;
     if (!clazz.isAbstract()) {
-      clazz.annotate(Builder.class);
+      final JAnnotationUse builderString = clazz.annotate(Builder.class);
+      if (clazz._extends() instanceof JDefinedClass) {
+        builderString.param("builderMethodName", "build" + clazz.name());
+      }
     }
     final JAnnotationUse toString = clazz.annotate(ToString.class);
     if (clazz._extends() instanceof JDefinedClass) {
