@@ -20,7 +20,9 @@ public final class LombokXjcPlugin extends Plugin {
     if (!clazz.isAbstract()) {
       final JAnnotationUse builder = clazz.annotate(Builder.class);
       if (clazz._extends() instanceof JDefinedClass) {
-        builder.param("builderMethodName", determineBuilderMethodName(clazz.name()));
+        String builderMethodName =
+            clazz.name().substring(0, 1).toLowerCase() + clazz.name().substring(1) + "Builder";
+        builder.param("builderMethodName", builderMethodName);
       }
     }
     final JAnnotationUse toString = clazz.annotate(ToString.class);
@@ -35,12 +37,6 @@ public final class LombokXjcPlugin extends Plugin {
     if (!clazz.fields().isEmpty()) {
       clazz.annotate(AllArgsConstructor.class).param("access", AccessLevel.PRIVATE);
     }
-  }
-
-  private static String determineBuilderMethodName(final String className) {
-    String builderMethodName =
-        className.substring(0, 1).toLowerCase() + className.substring(1) + "Builder";
-    return builderMethodName;
   }
 
   @Override

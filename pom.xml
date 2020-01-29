@@ -4,17 +4,14 @@
   <parent>
     <groupId>gov.va.api.health</groupId>
     <artifactId>health-apis-parent</artifactId>
-    <version>2.0.4</version>
+    <version>5.0.0</version>
     <relativePath/>
   </parent>
   <groupId>gov.va.xjc</groupId>
   <artifactId>lombok-xjc-plugin</artifactId>
   <version>1.0.3-SNAPSHOT</version>
   <properties>
-    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
     <jaxb-xjc.version>2.3.2</jaxb-xjc.version>
-    <lombok.version>1.18.8</lombok.version>
-    <maven-dependency-plugin>3.1.1</maven-dependency-plugin>
   </properties>
   <dependencies>
     <dependency>
@@ -26,7 +23,6 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -34,7 +30,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>${maven-dependency-plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -61,7 +56,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>${build-helper-maven-plugin.version}</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
