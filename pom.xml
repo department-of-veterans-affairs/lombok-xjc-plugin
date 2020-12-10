@@ -11,6 +11,7 @@
   <artifactId>lombok-xjc-plugin</artifactId>
   <version>1.0.5-SNAPSHOT</version>
   <properties>
+    <error-prone.args/>
     <jaxb-xjc.version>2.3.2</jaxb-xjc.version>
   </properties>
   <dependencies>
