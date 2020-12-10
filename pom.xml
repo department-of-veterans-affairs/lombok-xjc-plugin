@@ -9,7 +9,7 @@
   </parent>
   <groupId>gov.va.xjc</groupId>
   <artifactId>lombok-xjc-plugin</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6-SNAPSHOT</version>
   <properties>
     <error-prone.args/>
     <jaxb-xjc.version>2.3.2</jaxb-xjc.version>
